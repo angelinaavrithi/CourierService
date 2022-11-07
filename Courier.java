@@ -10,16 +10,16 @@ public class Courier {
     public static void main(String[] args) {
 
         //All origin and destination countries stored in arrays
-        String[] countriesOfDestination = {"GR", "IT", "DE", "DK", "IT", "CA", "US", "UY", "TV", "ES", "UK", "UA", "JP", "FR", "PT", "SA"};
-        String[] countriesOfOrigin = {"GR", "IT", "DE", "DK", "IT", "CA", "US", "UY", "TV", "ES", "UK", "UA", "JP", "FR", "PT", "SA"};
+        String[] countriesOfDestination = {"GR", "IT", "DE", "DK", "IT", "CA", "US", "UY","ES", "UK", "UA", "JP", "FR", "PT", "SA"};
+        String[] countriesOfOrigin = {"GR", "IT", "DE", "DK", "IT", "CA", "US", "UY", "ES", "UK", "UA", "JP", "FR", "PT", "SA"};
 
-        Parcel p1 = new Parcel(1, getRandom(countriesOfDestination), getRandom(countriesOfOrigin), "Pending");
-        Parcel p2 = new Parcel(2, getRandom(countriesOfDestination), getRandom(countriesOfOrigin), "Pending");
-        Parcel p3 = new Parcel(3, getRandom(countriesOfDestination), getRandom(countriesOfOrigin), "Pending");
-        Parcel p4 = new Parcel(4, getRandom(countriesOfDestination), getRandom(countriesOfOrigin), "Pending");
-        Parcel p5 = new Parcel(5, getRandom(countriesOfDestination), getRandom(countriesOfOrigin), "Pending");
+        Parcel p1 = new Parcel(1, getRandom(countriesOfDestination), getRandom(countriesOfOrigin));
+        Parcel p2 = new Parcel(2, getRandom(countriesOfDestination), getRandom(countriesOfOrigin));
+        Parcel p3 = new Parcel(3, getRandom(countriesOfDestination), getRandom(countriesOfOrigin));
+        Parcel p4 = new Parcel(4, getRandom(countriesOfDestination), getRandom(countriesOfOrigin));
+        Parcel p5 = new Parcel(5, getRandom(countriesOfDestination), getRandom(countriesOfOrigin));
 
-        ArrayList parcels = new ArrayList<>();
+        PriorityQueue parcels = new PriorityQueue<>();
         parcels.add(p1);
         parcels.add(p2);
         parcels.add(p3);
