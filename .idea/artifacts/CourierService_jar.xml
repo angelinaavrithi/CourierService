@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="CourierService:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CourierService_jar</output-path>
+    <root id="archive" name="CourierService.jar">
+      <element id="module-output" name="CourierService" />
+    </root>
+  </artifact>
+</component>

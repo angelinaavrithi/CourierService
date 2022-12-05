@@ -2,6 +2,7 @@ public class Parcel {
 
     private static int count = 100;
     private int parcelCode;
+    private int clientId;
     private String origin;
     private String destination;
     private ParcelStatus parcelStatus;
@@ -10,18 +11,28 @@ public class Parcel {
 
 
     /**
-     * Constructor for Parcel
+     * Constructor for parcel
      * @param origin country of origin
      * @param destination destination country
      */
-    public Parcel (String origin, String destination)
+    public Parcel (int clientId, String origin, String destination)
     {
         this.parcelCode = count++;
+        this.clientId = clientId;
         this.origin = origin;
         this.destination = destination;
         this.parcelStatus = ParcelStatus.PENDING;
-        this.shippingMethod = ShippingMethod.STANDARD;
+        this.shippingMethod = setShippingMethod();
         this.fee = calculateShippingFee(this);
+    }
+
+    /**
+     * Get client id code
+     * @return clientId
+     */
+    public int getClientid()
+    {
+        return clientId;
     }
 
     /**
@@ -51,6 +62,10 @@ public class Parcel {
         return destination;
     }
 
+    /**
+     * Ge the parcel fee
+     * @return fee
+     */
     public int getFee()
     {
         return fee;
@@ -74,6 +89,17 @@ public class Parcel {
         return shippingMethod;
     }
 
+    /**
+     * Set parcel shipping method, according to the user's choice
+     * @return
+     */
+    public ShippingMethod setShippingMethod() {
+        if (ParcelDialog.menu.getSelectedItem().toString().equals("Standard")) return ShippingMethod.STANDARD;
+        else if (ParcelDialog.menu.getSelectedItem().toString().equals("Express")) return ShippingMethod.EXPRESS;
+        else if (ParcelDialog.menu.getSelectedItem().toString().equals("Next Day")) return ShippingMethod.NEXTDAY;
+
+        return shippingMethod;
+    }
 
     /**
      * Update the parcel status to the next phase

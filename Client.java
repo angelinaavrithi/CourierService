@@ -5,7 +5,7 @@ public class Client {
     private String name;
     private String address;
     private String country;
-    private double balance;
+    private int balance;
 
     /**
      * Constructor for Client
@@ -54,16 +54,40 @@ public class Client {
     }
 
     /**
+     * Set client balance
+     * @param balance
+     */
+    public void setBalance(int balance) {
+
+        this.balance = balance;
+    }
+
+    /**
      * Get client balance
      * @return balance
      */
-    public double getBalance() {
+    public int getBalance() {
         return balance;
     }
 
+    /**
+     * Converts client balance to string
+     * @return balance
+     */
+    public String balanceToString() {
+        return balance + "€";
+    }
+
+
+    /**
+     * Converts client information to string
+     * @return string
+     */
     @Override
     public String toString() {
         return "\nClient #" + id + ", Name: " + name  + ", Address: " + address + ", Country: " + country + ", Balance: " + balance;
     }
+
+
 
 }
